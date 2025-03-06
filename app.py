@@ -3,11 +3,17 @@ import os
 import pdfplumber
 import re
 import google.generativeai as genai
+import argparse
 from utils import *
 import base64
 
+# Parse command-line arguments for API key
+parser = argparse.ArgumentParser(description="Resume Evaluator App")
+parser.add_argument("--api_key", type=str, required=True, help="Google Gemini API Key")
+args = parser.parse_args()
+
 # Configure Gemini API
-genai.configure(api_key="AIzaSyC7h_IxCQGvw6wPEI6PNhFJigVAMbqT1Ho")  # Replace with your actual API key
+genai.configure(api_key=args.api_key)
 
 # Custom Styling
 st.markdown("""
