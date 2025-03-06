@@ -1,0 +1,6 @@
+streamlit
+os
+pdfplumber
+re
+google-generativeai
+base64
